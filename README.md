@@ -82,18 +82,3 @@ Apache, lalu akses lewat `http://localhost/student-portal/login.php`.
 5. **Mahasiswa login** dengan akun yang dibuatkan admin → melihat dashboard
    pribadi: NIM, jumlah mata kuliah selesai, total SKS, IPK (dihitung
    otomatis), dan tabel riwayat nilai.
-
-## Keamanan yang Sudah Diterapkan
-- Password disimpan sebagai **hash bcrypt** (`password_hash` / `password_verify`),
-  bukan plain text.
-- Semua query database memakai **prepared statement** (PDO), aman dari SQL
-  injection.
-- Session-based login dengan pemisahan akses admin vs mahasiswa
-  (`require_admin()` / `require_mahasiswa()`).
-- Output ke HTML di-escape lewat fungsi `e()` (mencegah XSS).
-
-## Pengembangan Lanjutan (opsional, belum termasuk)
-- Halaman ganti password untuk admin & mahasiswa.
-- Edit/hapus data mahasiswa dan mata kuliah.
-- Export data ke Excel/PDF.
-- Validasi format NIM, konfirmasi email, dsb.
